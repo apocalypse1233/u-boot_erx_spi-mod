@@ -902,7 +902,7 @@ void LANWANPartition(void)
 	mii_mgr_write(31, 0x2304, 0xff0003);//port3
 	mii_mgr_write(31, 0x2404, 0xff0003);//port4
 	//mii_mgr_write(31, 0x2504, 0xff0003);//port5
-	//mii_mgr_write(31, 0x2604, 0xff0003);//port5
+	//mii_mgr_write(31, 0x2604, 0xff0003);//port6
 
 	//set PVID
 	mii_mgr_write(31, 0x2014, 0x10002);//port0
@@ -912,7 +912,7 @@ void LANWANPartition(void)
 	mii_mgr_write(31, 0x2414, 0x10001);//port4
 	//mii_mgr_write(31, 0x2514, 0x10001);//port5
 	//mii_mgr_write(31, 0x2614, 0x10001);//port6
-	/*port6 */
+
 	//VLAN member
 	IsSwitchVlanTableBusy();
 	mii_mgr_write(31, 0x94, 0x407e0001);//VAWD1
@@ -957,7 +957,7 @@ void LANWANPartition(void)
 	mii_mgr_write(31, 0x90, 0x80001002);//VTCR, VID=2
 	IsSwitchVlanTableBusy();
 #endif
-#if 0 // make port isolated by default for e50 series
+#ifdef UBNT_PORT_ISOLATION
 	printf("set port isolation\n");
 	//LAN/WAN ports as security mode
 	mii_mgr_write(31, 0x2004, 0xff0003);//port0
