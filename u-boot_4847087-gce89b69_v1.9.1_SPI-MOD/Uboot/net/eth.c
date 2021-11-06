@@ -233,7 +233,7 @@ int eth_initialize(bd_t *bis)
 				puts (" [PRIME]");
 			}
 
-#define GMAC0_OFFSET    0x28
+#define GMAC0_OFFSET    0x22
 #define GDMA1_MAC_ADRL  0x2C
 #define GDMA1_MAC_ADRH  0x30
 
