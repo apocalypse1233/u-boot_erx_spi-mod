@@ -957,7 +957,7 @@ void LANWANPartition(void)
 	mii_mgr_write(31, 0x90, 0x80001002);//VTCR, VID=2
 	IsSwitchVlanTableBusy();
 #endif
-#ifdef UBNT_PORT_ISOLATION
+#if 0 // make port isolated by default for e50 series
 	printf("set port isolation\n");
 	//LAN/WAN ports as security mode
 	mii_mgr_write(31, 0x2004, 0xff0003);//port0
